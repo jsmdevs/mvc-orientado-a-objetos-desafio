@@ -20,9 +20,9 @@ function main() {
   
   const contacsController = new ContactsController();
   
-  const resul = parseaParams(process.argv.slice(2));
-  const asd = contacsController.processOptions(resul);
-  console.log(asd)
+  const resulArgvParse = parseaParams(process.argv.slice(2)); // Se parsea los comando y argumentos ingresados por consola
+  const resul = contacsController.processOptions(resulArgvParse); // Se procesan los comandos y argumentos
+  console.log(resul);
 
 }
 

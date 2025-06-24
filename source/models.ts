@@ -18,25 +18,25 @@ class ContactsCollection {
     this.arrayContacs = [];
   }
 
-  load() {
+  load() { // Carga los datos del archivo contacts.json
     const file = path.join(__dirname, "contacts.json");
     this.arrayContacs = jsonfile.readFileSync(file);
   }
 
-  getAll() {
+  getAll() { // Obtiene todos los datos del array de contactos
     return this.arrayContacs;
   }
 
-  addOne(contact) {
+  addOne(contact) { // Añade un contacto al array
     this.arrayContacs.push(contact);
   }
 
-  save() {
+  save() { // Guarda todo el array dentro del archivo contacts.json
     const file = path.join(__dirname, "contacts.json");
     jsonfile.writeFileSync(file, this.arrayContacs);
   }
 
-  getOneById(id) {
+  getOneById(id) { // Muestra un contacto del array buscado por el ID
     const found = find(this.arrayContacs, { id: id });
     const res = found ? found : this.getAll();
     return res;
